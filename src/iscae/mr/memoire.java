@@ -22,6 +22,10 @@ public class memoire {
 	
 	private static Map<String, String> connectionState = new HashMap<>();
 	
+	public static Map<String,String> getConState(){
+		return connectionState;
+	}
+	
 	public static void connecter(String user){
 		connectionState.put(user, "1");
 	}
