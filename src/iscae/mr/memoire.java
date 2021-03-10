@@ -7,6 +7,8 @@ public class memoire {
 	
 	private static Map<String, client> clients = new HashMap<>();
 	public static Map<String, client> getClients(){
+		clients.put("1",new client("mohamed","beirouk","1","1234",1,125000));
+		
 		return clients;
 	}
 	

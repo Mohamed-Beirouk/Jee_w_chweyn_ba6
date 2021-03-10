@@ -8,9 +8,8 @@ public class admin {
 	public admin(){
 		
 	}
-	public void nn(){
-		return;
-	}
+	
+	
 	public admin(String id, String password){
 		this.identifiant=id;
 		this.motDePasse=password;

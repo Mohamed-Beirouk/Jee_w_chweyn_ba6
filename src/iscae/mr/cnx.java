@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/con")
+@Path("/connect")
 @Produces("application/json")
 public class cnx {
 

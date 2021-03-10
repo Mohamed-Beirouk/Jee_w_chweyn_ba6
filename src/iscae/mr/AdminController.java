@@ -19,33 +19,33 @@ public class AdminController {
 	static Services service = new Services();
 	
 	@PUT
-	@Path("add/client")
+	@Path("ajouterClient")
 	public String addClient(client c){
-		return service.addClient(c);
+		return service.ajouterClient(c);
 	}
 	
 	@GET
-	@Path("all/client")
+	@Path("afficherClients")
 	public List<client> allClients(){
-		return service.allClients();
+		return service.afficherClients();
 	}
 	
 	@GET
-	@Path("client/{id}")
-	public client getClient(@PathParam("id") String id){
-		return service.getClient(id);
+	@Path("afficherClientUnique/{id}")
+	public client afficherClientUnique(@PathParam("id") String id){
+		return service.afficherClientUnique(id);
 	}
 	
 	@GET
-	@Path("client/{id_crediteur}/tranfer/{montant}/to/{id_debiteur}")
+	@Path("client/transfert/{montant}/from/{id_crediteur}/to/{id_debiteur}")
 	public String transfertArgent(@PathParam("id_crediteur") String id_crediteur, @PathParam("id_debiteur") String id_debiteur, @PathParam("montant") double montant){
-		return service.transfertArgent(id_debiteur, id_crediteur, montant);
+		return service.transfert(id_debiteur, id_crediteur, montant);
 	}
 	
 	@GET
 	@Path("client/{id}/versement/{montant}")
-	public String versement(@PathParam("id") String id, @PathParam("montant") double montant){
-		return service.versement(id, montant);
+	public String verser(@PathParam("id") String id, @PathParam("montant") double montant){
+		return service.verser(id, montant);
 	}
 	
 	@GET
@@ -56,8 +56,8 @@ public class AdminController {
 	
 	@DELETE
 	@Path("client/delete/{id}")
-	public String deleteClient(@PathParam("id") String id){
-		return service.deleteClient(id);
+	public String supprimerClient(@PathParam("id") String id){
+		return service.supprimerClient(id);
 	}
 
 }
