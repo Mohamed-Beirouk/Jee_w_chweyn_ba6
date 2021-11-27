@@ -11,7 +11,7 @@ public class Services {
 	
 	public String ajouterClient(client c){
 		clients.put(c.getIdentifiant(), c);
-		return c.getNom()+" is added with success";
+		return c.getNom()+" a ete ajouter avec succes";
 	}
 	
 	public List<client> afficherClients() {

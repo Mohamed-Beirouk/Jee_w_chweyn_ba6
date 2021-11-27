@@ -3,7 +3,7 @@ package iscae.mr;
 public class admin {
 	
 	private String identifiant;
-	private String motDePasse;
+	private String motdepasse;
 	
 	public admin(){
 		
@@ -12,7 +12,7 @@ public class admin {
 	
 	public admin(String id, String password){
 		this.identifiant=id;
-		this.motDePasse=password;
+		this.motdepasse=password;
 	}
 	
 	public String getIdentifiant() {
@@ -22,10 +22,10 @@ public class admin {
 		this.identifiant = identifiant;
 	}
 	public String getMotDePasse() {
-		return motDePasse;
+		return motdepasse;
 	}
 	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
+		this.motdepasse = motDePasse;
 	}
 	
 	

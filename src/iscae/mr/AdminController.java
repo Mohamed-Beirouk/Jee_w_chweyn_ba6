@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -18,15 +19,15 @@ public class AdminController {
 	
 	static Services service = new Services();
 	
-	@PUT
+	@POST
 	@Path("ajouterClient")
-	public String addClient(client c){
+	public String ajouterClient(client c){
 		return service.ajouterClient(c);
 	}
 	
 	@GET
 	@Path("afficherClients")
-	public List<client> allClients(){
+	public List<client> afficherClients(){
 		return service.afficherClients();
 	}
 	
@@ -36,7 +37,7 @@ public class AdminController {
 		return service.afficherClientUnique(id);
 	}
 	
-	@GET
+	@PUT
 	@Path("client/transfert/{montant}/from/{id_crediteur}/to/{id_debiteur}")
 	public String transfertArgent(@PathParam("id_crediteur") String id_crediteur, @PathParam("id_debiteur") String id_debiteur, @PathParam("montant") double montant){
 		return service.transfert(id_debiteur, id_crediteur, montant);
@@ -44,7 +45,7 @@ public class AdminController {
 	
 	@GET
 	@Path("client/{id}/versement/{montant}")
-	public String verser(@PathParam("id") String id, @PathParam("montant") double montant){
+	public String versement(@PathParam("id") String id, @PathParam("montant") double montant){
 		return service.verser(id, montant);
 	}
 	
@@ -55,7 +56,7 @@ public class AdminController {
 	}
 	
 	@DELETE
-	@Path("client/delete/{id}")
+	@Path("client/supprimer/{id}")
 	public String supprimerClient(@PathParam("id") String id){
 		return service.supprimerClient(id);
 	}
